@@ -30,13 +30,12 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public Task addTask(TaskDto task, long id) {
+    public Task addTask(TaskDto task) {
         Task task1 = new Task();
         Employee employee = new Employee();
-        if(employeeRepository.findById(id).isPresent()){
+        if(employeeRepository.findById(task.getEmployeeId()).isPresent()){
             task1.setStatus(Status.valueOf(task.getStatus()));
             task1.setDescription(task.getDescription());
-            employee.setId(id);
         }
         return taskRepository.save(task1);
     }

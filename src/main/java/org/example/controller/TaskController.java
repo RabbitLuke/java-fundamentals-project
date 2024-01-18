@@ -24,8 +24,8 @@ public class TaskController {
     @Autowired
     private EmployeeService employeeService;
     @PostMapping("")
-    public ResponseEntity<?> addTask(@RequestBody TaskDto taskDto, long id) {
-        Task savedTask = taskService.addTask(taskDto, id);
+    public ResponseEntity<?> addTask(@RequestBody TaskDto taskDto) {
+        Task savedTask = taskService.addTask(taskDto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTask);
     }

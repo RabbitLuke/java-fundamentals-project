@@ -9,7 +9,7 @@ import java.util.List;
 public interface TaskService {
     List<Task> getAllTasks();
 
-    Task addTask(TaskDto task, long id);
+    Task addTask(TaskDto task);
 
     List<Task> getTasks(Long employeeId, Status status);
 
