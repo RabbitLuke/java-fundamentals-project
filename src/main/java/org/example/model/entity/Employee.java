@@ -10,10 +10,11 @@ import org.example.model.dto.EmployeeDto;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Employee {
 
-    public Employee() {
-    }
 
     public Employee(EmployeeDto employeeDto) {
         this.firstName = employeeDto.getFirstName();
